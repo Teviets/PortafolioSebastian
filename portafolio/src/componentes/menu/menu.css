@@ -1,0 +1,156 @@
+#Menu-container{
+    margin: 35px;
+    cursor: pointer;
+}
+
+#content-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: relative; 
+    z-index: 100; 
+}
+
+
+.conteinerLines{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+    width: auto;
+    height: auto;
+    padding: 9px;
+}
+
+#firstContainerLines {
+    padding: 0px !important;
+    animation: morph 1.5s steps(6, end) infinite;
+    transform-origin: center;
+}
+
+@keyframes morph {
+    0% {
+        width: 55px;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    20% {
+        width: 60px;
+        transform: translate3d(-2px, 0, 2px) rotate(1deg);
+    }
+    40% {
+        width: 65px;
+        transform: translate3d(-4px, 0, 4px) rotate(2deg);
+    }
+    60% {
+        width: 70px;
+        transform: translate3d(-2px, 0, 2px) rotate(1deg);
+    }
+    80% {
+        width: 65px;
+        transform: translate3d(-1px, 0, 1px) rotate(0.5deg);
+    }
+    100% {
+        width: 55px;
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+#secondContainerLines {
+    padding: 0px !important;
+    animation: depthEffect 1s steps(4, end) infinite;
+    transform-origin: center;
+}
+
+@keyframes depthEffect {
+    0% {
+        transform: translate3d(0, 0, 0) scaleX(1);
+    }
+    25% {
+        transform: translate3d(-2px, 1px, 0) scaleX(1.05);
+    }
+    50% {
+        transform: translate3d(-4px, 2px, 0) scaleX(1.1);
+    }
+    75% {
+        transform: translate3d(-2px, 1px, 0) scaleX(1.05);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scaleX(1);
+    }
+}
+
+
+.bar-menu {
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+.bar-menu{
+    margin-top: 5px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: #ffffff;
+    
+}
+
+#bar-menu3{
+    margin-bottom: 5px;
+}
+
+
+#content-menu {
+    visibility: hidden; /* Inicialmente oculto */
+    position: fixed;
+    top: 35%;
+    left: 75%; /* Fuera de la vista inicialmente */
+    width: auto;
+    height: auto;
+    z-index: 1001;
+    transition: visibility 0.5s ease, transform 0.3s ease; /* Transiciones para visibilidad y transformación */
+}
+
+#content-menu.active {
+    visibility: visible; /* Cuando está activo, es visible */
+    transform: translateX(0); /* Traemos el menú a su posición visible */
+    z-index: 1012;
+}
+
+.option-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 3px solid #ffffff;
+    margin-top: 35px;
+}
+
+.option-menu Link{
+    margin: 15px;
+}
+
+.option-menu:hover{
+    background-color: #ffffff;
+    color: #000000;
+    transform: scale(1.2);  /* Aumenta el tamaño al 120% */
+}
+
+
+
+
+
+  
