@@ -1,16 +1,17 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';  
+import { Route, Routes, BrowserRouter } from 'react-router-dom'; 
 import Background from '../../componentes/background/Background.jsx';
-
-import '../../componentes/menu/Menu.jsx';
+import { gsap } from 'gsap';
+import Home from '../Home/Home.jsx';
 import Menu from '../../componentes/menu/Menu.jsx';
-
 
 function App() {
   const backgroundRef = useRef(null);
   const [cursor, setCursor] = useState({ x: null, y: null });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const routesContainerRef = useRef(null);  // Ref para el contenedor de rutas
 
   const handleMouseMove = (event) => {
     if (backgroundRef.current) {
@@ -22,24 +23,54 @@ function App() {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
+  useEffect(() => {
+    if (isMenuOpen && routesContainerRef.current) {
+      gsap.to(routesContainerRef.current, {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: "power2.inOut",
+        onComplete: () => {
+          // Ocultar completamente después de la animación
+          gsap.set(routesContainerRef.current, { display: 'none' });
+        }
+      });
+    } else if (routesContainerRef.current) {
+      // Primero hacemos visible el contenedor
+      gsap.set(routesContainerRef.current, { 
+        display: 'block',
+        x: -100,
+        opacity: 0
+      });
+      // Luego animamos
+      gsap.to(routesContainerRef.current, {
+        opacity: 1,
+        x: 0,
+        duration: 0.5,
+        delay: 0.3,
+        ease: "power2.inOut"
+      });
+    }
+  }, [isMenuOpen]);
+
   return (
     <div 
       className="App"
       onMouseMove={handleMouseMove}
     >
       <Background cursor={cursor} ref={backgroundRef} />
-      <Menu />
-      <Routes>
-        <Route path="/" exact>
-          <h1>Home</h1>
-        </Route>
-        <Route path="/about">
-          <h1>About</h1>
-        </Route>
-        <Route path="/contact">
-          <h1>Contact</h1>
-        </Route>
-      </Routes>
+      <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+
+      <div ref={routesContainerRef} className="routes-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+        </Routes>
+      </div>
     </div>
   );
 }
