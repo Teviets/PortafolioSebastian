@@ -137,16 +137,17 @@
     transition: background-color 0.3s ease;
     border: 3px solid #ffffff;
     margin-top: 35px;
+    padding: 20px;
 }
 
 .option-menu Link{
-    margin: 15px;
+    margin: 15px !important;
 }
 
 .option-menu:hover{
     background-color: #ffffff;
     color: #000000;
-    transform: scale(1.2);  /* Aumenta el tamaño al 120% */
+    transform: scale(1.5) !important;  /* Aumenta el tamaño al 120% */
 }
 
 

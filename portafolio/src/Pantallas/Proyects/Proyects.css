@@ -1,0 +1,23 @@
+#proyects-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+#title-proyects{
+    font-size: 4em;
+    margin-top: 35px;
+}
+
+.grid-proyects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 45px;
+    width: 100%;
+    max-width: 1350px; 
+    margin: 20px auto; 
+    justify-content: center;
+}

@@ -1,11 +1,17 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
-import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'; 
-import Background from '../../componentes/background/Background.jsx';
 import { gsap } from 'gsap';
+
 import Home from '../Home/Home.jsx';
+import AboutMe from '../AboutMe/AboutMe.jsx';
+
+import Background from '../../componentes/background/Background.jsx';
 import Menu from '../../componentes/menu/Menu.jsx';
+import Proyects from '../Proyects/Proyects.jsx';
+
+import './App.css';
+
 
 function App() {
   const backgroundRef = useRef(null);
@@ -68,6 +74,8 @@ function App() {
       <div ref={routesContainerRef} className="routes-container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/proyects" element={<Proyects />} />
           
         </Routes>
       </div>

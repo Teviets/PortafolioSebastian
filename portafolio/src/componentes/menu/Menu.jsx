@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { gsap } from 'gsap';
 import { BrowserRouter as Router, Link } from 'react-router-dom'; 
+
+import Constant from '../../assets/Constant/Constant.jsx'
+
 import './menu.css';
 
 export default function Menu({ isMenuOpen, toggleMenu }) {
@@ -123,16 +126,16 @@ export default function Menu({ isMenuOpen, toggleMenu }) {
           <div id='menu'>
             <ul>
               <li className='option-menu' id='home-menu'>
-                <Link to='/'>Inicio</Link>
+                <Link to={Constant.Home.url}  onClick={handleClick} >{Constant.Home.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='about-me-menu'>
-                <Link to='/about'>Sobre mi</Link>
+                <Link to={Constant.About.url}  onClick={handleClick}>{Constant.About.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='proyects-menu'>
-                <Link href='/proyects'>Proyectos</Link>
+                <Link to={Constant.Proyects.url}  onClick={handleClick}>{Constant.Proyects.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='contact-menu'>
-                <Link href='/contact'>Contacto</Link>
+                <Link to='/contact'  onClick={handleClick}>Contacto</Link>
               </li>
             </ul>
           </div>

@@ -1,0 +1,196 @@
+#aboutMe-container {
+    z-index: 1010;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    left: 53%;
+    top: 27%;
+    width: 100%; 
+    max-width: 45%;
+    height: 48%;
+    scroll-snap-type: y mandatory;
+    overflow: hidden; 
+    box-sizing: border-box; 
+    overflow-y: auto; /* Habilita el scroll solo en este div */
+}
+
+#aboutMe-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del "track" (fondo de la barra) */
+#aboutMe-container::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Color de fondo del track */
+    border-radius: 4px;
+}
+
+/* Estilo del "thumb" (deslizador) */
+#aboutMe-container::-webkit-scrollbar-thumb {
+    background: #ff8800; /* Color del deslizador */
+    border-radius: 4px;
+}
+
+/* Cambia el color cuando se pasa el cursor */
+#aboutMe-container::-webkit-scrollbar-thumb:hover {
+    background: #ff8800; /* Color cuando el usuario lo pasa */
+}
+
+#Title-container h2{
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+#description-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#Image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    overflow: hidden;
+}
+
+#Image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+}
+
+#Text-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    
+}
+
+#Skills-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#Title-skill-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    width: 30%;
+    height: 100%;
+}
+
+#Skill-container-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+#Title-skill-container h3 {
+    position: relative;
+    font-size: 1.7em;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.description-list {
+    display: flex; 
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.description-list li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.known-title{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+}
+
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px; /* Centra el tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#divider-div{
+    width: 100%;
+    height: 2px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.snap-child {
+    scroll-snap-align: start;
+    
+}
+
+#huge-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
