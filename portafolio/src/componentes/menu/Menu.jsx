@@ -2,11 +2,15 @@ import React from 'react';
 import { gsap } from 'gsap';
 import { BrowserRouter as Router, Link } from 'react-router-dom'; 
 
+import { useLanguage } from '../Language/LanguageSelector.jsx';
+
 import Constant from '../../assets/Constant/Constant.jsx'
 
 import './menu.css';
 
 export default function Menu({ isMenuOpen, toggleMenu }) {
+
+  const { language } = useLanguage(); 
   const openMenu = () => {
     gsap.set('#content-menu', {
       visibility: 'visible',
@@ -126,16 +130,16 @@ export default function Menu({ isMenuOpen, toggleMenu }) {
           <div id='menu'>
             <ul>
               <li className='option-menu' id='home-menu'>
-                <Link to={Constant.Home.url}  onClick={handleClick} >{Constant.Home.Breadcrumb}</Link>
+                <Link to={Constant[language].Home.url}  onClick={handleClick} >{Constant[language].Home.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='about-me-menu'>
-                <Link to={Constant.About.url}  onClick={handleClick}>{Constant.About.Breadcrumb}</Link>
+                <Link to={Constant[language].About.url}  onClick={handleClick}>{Constant[language].About.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='proyects-menu'>
-                <Link to={Constant.Proyects.url}  onClick={handleClick}>{Constant.Proyects.Breadcrumb}</Link>
+                <Link to={Constant[language].Proyects.url}  onClick={handleClick}>{Constant[language].Proyects.Breadcrumb}</Link>
               </li>
               <li className='option-menu' id='contact-menu'>
-                <Link to='/contact'  onClick={handleClick}>Contacto</Link>
+                <Link to={Constant[language].Contact.url}  onClick={handleClick}> {Constant[language].Contact.Breadcrumb} </Link>
               </li>
             </ul>
           </div>

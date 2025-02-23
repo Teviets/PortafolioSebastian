@@ -1,0 +1,31 @@
+.Background{
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+  .Background {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .Background {
+    position: absolute;
+    top: 37%;
+    left: -18%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) and (min-device-width: 1440px) {
+  .Background {
+    position: absolute;
+    top: 0%;
+    left: -10%;
+  }
+}
+
+@media (min-width: 1441px) {
+  .Background {
+    position: absolute;
+    top: 0%;
+  }
+}

@@ -5,8 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 23%;
-    top: 15%;
+    left: 27%;
+    top: 20%;
 }
 
 .close-container{
@@ -224,3 +224,79 @@
         opacity: 0;
     }
 }
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    #container-home {
+      left: 0; /* Ajusta la posición */
+      top: 5%; /* Ajusta la posición */
+      width: 100%; /* Ocupa todo el ancho */
+      margin-top: 75px;
+      padding: 0 20px; /* Añade un poco de padding */
+    }
+  
+    #card-home {
+      width: 100%; /* Ocupa todo el ancho */
+    }
+  
+    #draw-card {
+        position: absolute;
+        left: 50%;
+    }
+    
+  
+    #name-card,
+    #animation-card-1,
+    #content-2-level-2,
+    #content-1-level-4,
+    #content-2-level-4 {
+      width: 100%; /* Ocupa todo el ancho */
+      text-align: center; /* Centra el texto */
+    }
+  
+    #title-card {
+      font-size: 2em; /* Reduce el tamaño del título */
+    }
+  
+    #divider-line {
+      width: 75%; /* Ocupa todo el ancho */
+    }
+  
+    .vertical-char {
+      margin: 0.2em 0; /* Reduce el margen entre caracteres */
+    }
+  
+    #draw-3 svg {
+      width: 100%; /* Ajusta el tamaño del SVG */
+      height: auto;
+    }
+  
+    .moving-line {
+      width: 80px; /* Reduce el ancho de las líneas */
+      height: 10px; /* Reduce el grosor de las líneas */
+    }
+  }
+  
+  /* Estilos para pantallas medianas (tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #container-home {
+      left: 10%; /* Ajusta la posición */
+      top: 10%; /* Ajusta la posición */
+      width: 80%; /* Ocupa el 80% del ancho */
+    }
+  
+    #card-home {
+      width: 80%; /* Ocupa el 80% del ancho */
+    }
+  
+    #title-card {
+      font-size: 2.5em; /* Ajusta el tamaño del título */
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) and (min-device-width: 1440px) {
+    #container-home {
+        left: 30%; /* Ajusta la posición */
+        top: 18%; /* Ajusta la posición */
+      }
+  }

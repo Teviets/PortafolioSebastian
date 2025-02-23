@@ -2,25 +2,26 @@ import React from 'react'
 import './Home.css';
 import code_bars from '../../assets/drawable/code_bars.svg';
 import world from '../../assets/drawable/world.svg';
-import circles from '../../assets/drawable/circles.svg';
+
+import Constant from '../../assets/Constant/Constant.jsx';
+
+import { useLanguage } from '../../componentes/Language/LanguageSelector.jsx';
 
 
 export default function Home() {
-
-
-
+    const { language } = useLanguage();
     return (
         <div id='container-home'>
             <div id='card-home'>
                 <div id='card-level-1'>
-                    <span className='close-container' id='name-card'>Sebastian</span>
+                    <span className='close-container' id='name-card'>{Constant[language].Home.Card.name}</span>
                     <span className='close-container' id='animation-card-1'>
-                        37
+                        {Constant[language].Home.Card.ticket_number}
                     </span>
                 </div>
                 <div id='card-level-2'>
                     <div className='close-container' id='jp-letters'>
-                        {Array.from("にんたい").map((char, index) => (
+                        {Array.from(Constant[language].Home.Card.jp_letters).map((char, index) => (
                             <span key={index} className="vertical-char">{char}</span>
                         ))}
                     </div>
@@ -28,11 +29,11 @@ export default function Home() {
                         <span className='close-container' id='animation-card-2'>
                             <img src={code_bars} alt='code bars'/>
                         </span>
-                        <span className='close-container' id='lastname-card'>Estrada</span>
+                        <span className='close-container' id='lastname-card'>{Constant[language].Home.Card.lastname}</span>
                     </div>
                 </div> 
                 <div id='card-level-3'>
-                    <span id='title-card'>Portafolio</span>
+                    <span id='title-card'>{Constant[language].Home.Title}</span>
                     <div id='divider-line'/>
                 </div> 
                 <div id='card-level-4'>
@@ -40,7 +41,7 @@ export default function Home() {
                         <span className='draw-card'>
                             <img src={world} />
                         </span>
-                        <span className='close-container' id='second-lastname-card'>Tuch</span>
+                        <span className='close-container' id='second-lastname-card'>{Constant[language].Home.Card.second_lastname}</span>
                     </div>
                     <div className='vertical-content' id='content-2-level-4'>
                         <span  id='draw-2'>

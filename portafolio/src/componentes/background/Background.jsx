@@ -7,6 +7,7 @@ import backgroundSvg from '../../assets/drawable/background.svg';
 const Background = React.forwardRef(({ cursor },ref) => {
 
   const [gradientCenter, setGradientCenter] = useState({ cx: "50%", cy: "50%" });
+  const [viewBox, setViewBox] = useState('0 0 2022 1022'); 
 
   useEffect(() => {
     if (cursor.x != null && cursor.y != null && ref.current) {
@@ -25,7 +26,36 @@ const Background = React.forwardRef(({ cursor },ref) => {
   }, [cursor]);
   
   
-  
+  useEffect(() => {
+    const handleResize = () => {
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+
+      if (width >1440){
+        width *= 0.8;
+        height *= 0.8;
+      }
+
+      let newViewBox = `0 0 ${width} ${height}`;
+
+      if (width >= 767 && width <= 1023) {
+        newViewBox = `0 0 2022 1022`;
+      }
+
+      setViewBox(newViewBox);
+    };
+
+    // Inicializar el viewBox
+    handleResize();
+
+    // Agregar el evento de cambio de tamaño
+    window.addEventListener('resize', handleResize);
+
+    // Limpiar el evento cuando el componente se desmonte
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
 
 
@@ -40,8 +70,9 @@ const Background = React.forwardRef(({ cursor },ref) => {
         xmlnsXlink="http://www.w3.org/1999/xlink" 
         x="0px" 
         y="0px"
-        viewBox="0 0 2022 1022"
-        style={{ enableBackground: 'new 0 0 1122 1122' }}
+        viewBox={viewBox}
+        preserveAspectRatio="xMidYMid meet" /* Asegura que el SVG se escale proporcionalmente */
+        style={{ width: '100%', height: '100%' }} /* Ocupa el 100% del contenedor */
         xmlSpace="preserve"
         className='duration-200 transition-all'
       >

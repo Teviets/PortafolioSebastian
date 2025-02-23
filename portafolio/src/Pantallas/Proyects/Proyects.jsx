@@ -10,17 +10,20 @@ import Nasa from '../../assets/drawable/Nasa.png'
 import Airbnb from '../../assets/drawable/CopiaAirbnb.png'
 import More from '../../assets/drawable/more.jpeg'
 
+import { useLanguage } from '../../componentes/Language/LanguageSelector.jsx';
+
 import './Proyects.css';
 
 import Constant from '../../assets/Constant/Constant'
 
 export default function Proyects() {
+    const { language } = useLanguage();
 
     return (
         <div id='proyects-container'>
-            <h2 id='title-proyects'>Proyects</h2>
+            <h2 id='title-proyects'>{Constant[language].Proyects.Title}</h2>
             <div className='grid-proyects'>
-                <Card.Root width="105%">
+                <Card.Root width="105%" borderColor={"fg.muted"}>
                     <Image
                         src={TerraControl}
                         height={250} 
@@ -29,23 +32,23 @@ export default function Proyects() {
                         <HStack mb="6" gap="3">
                             <Stack gap="0">
                                 <Text fontWeight="semibold" textStyle="sm">
-                                    Position
+                                    {Constant[language].Proyects.Position}
                                 </Text>
                                 <Text color="fg.muted" textStyle="sm">
-                                    Full stack Developer jr.
+                                    {Constant[language].Proyects.position_description}
                                 </Text>
                             </Stack>
                         </HStack>
-                        <Card.Description>
-                            <Strong color="fg">Responsabilities </Strong>
-                            {Constant.Proyects.TerraControl.Description}
+                        <Card.Description textAlign={"justify"}>
+                            <Strong color="fg">{Constant[language].Proyects.Description} </Strong>
+                            {Constant[language].Proyects.TerraControl.Description}
                         </Card.Description>
                     </Card.Body>
                     <Card.Footer>
                         <Modal posfix_name="TerraControl" />
                     </Card.Footer>
                 </Card.Root>
-                <Card.Root width="105%">
+                <Card.Root width="105%" borderColor={"fg.muted"}>
                     <Image
                         src="https://i.redd.it/rq5yp73l8nic1.png"
                         alt="Green double couch with wooden legs"
@@ -55,23 +58,23 @@ export default function Proyects() {
                         <HStack mb="6" gap="3">
                         <Stack gap="0">
                             <Text fontWeight="semibold" textStyle="sm">
-                            Position
+                            {Constant[language].Proyects.Position}
                             </Text>
                             <Text color="fg.muted" textStyle="sm">
-                            Full stack Developer jr.
+                            {Constant[language].Proyects.position_description}
                             </Text>
                         </Stack>
                         </HStack>
-                        <Card.Description>
-                        <Strong color="fg">Responsabilities </Strong>
-                        {Constant.Proyects.Pacifiko.Description}
+                        <Card.Description textAlign={"justify"}>
+                        <Strong color="fg">{Constant[language].Proyects.Description} </Strong>
+                        {Constant[language].Proyects.Pacifiko.Description}
                         </Card.Description>
                     </Card.Body>
                     <Card.Footer>
                         <Modal posfix_name="Pacifiko" />
                     </Card.Footer>
                 </Card.Root>
-                <Card.Root width="105%">
+                <Card.Root width="105%" borderColor={"fg.muted"}>
                     <Image
                         src={Airbnb}
                         height={250}
@@ -82,23 +85,23 @@ export default function Proyects() {
                         <HStack mb="6" gap="3">
                         <Stack gap="0">
                             <Text fontWeight="semibold" textStyle="sm">
-                            Position
+                            {Constant[language].Proyects.Position}
                             </Text>
                             <Text color="fg.muted" textStyle="sm">
-                            Student
+                            {Constant[language].Proyects.position_student}
                             </Text>
                         </Stack>
                         </HStack>
-                        <Card.Description>
-                        <Strong color="fg">Responsabilities </Strong>
-                        {Constant.Proyects.Airbnb.Description}
+                        <Card.Description textAlign={"justify"}>
+                        <Strong color="fg"> {Constant[language].Proyects.Description} </Strong>
+                        {Constant[language].Proyects.Airbnb.Description}
                         </Card.Description>
                     </Card.Body>
                     <Card.Footer>
                         <Modal posfix_name="Airbnb" />
                     </Card.Footer>
                 </Card.Root>
-                <Card.Root width="105%">
+                <Card.Root width="105%" borderColor={"fg.muted"}>
                     <Image
                         src={Nasa}
                         height={250}
@@ -109,16 +112,16 @@ export default function Proyects() {
                         <HStack mb="6" gap="3">
                         <Stack gap="0">
                             <Text fontWeight="semibold" textStyle="sm">
-                            Position
+                            {Constant[language].Proyects.Position}
                             </Text>
                             <Text color="fg.muted" textStyle="sm">
-                            Full stack Developer jr.
+                            {Constant[language].Proyects.position_front}
                             </Text>
                         </Stack>
                         </HStack>
-                        <Card.Description>
-                        <Strong color="fg">Responsabilities </Strong>
-                        {Constant.Proyects.Nasa.Description}
+                        <Card.Description textAlign={"justify"}>
+                        <Strong color="fg">{Constant[language].Proyects.Description} </Strong>
+                        {Constant[language].Proyects.Nasa.Description}
                         </Card.Description>
                     </Card.Body>
                     <Card.Footer>
@@ -126,33 +129,35 @@ export default function Proyects() {
                     </Card.Footer>
                 </Card.Root>
             </div>
-            <Card.Root flexDirection="row" overflow="hidden" maxW="9000" height={300}>
-                <Image
-                objectFit="cover"
-                src={More}
-                alt="Caffe Latte"
-                />
-                <Box>
-                <Card.Body>
-                    <Card.Title mb="2">Other proyects</Card.Title>
-                    <Card.Description>
-                    <Text color="fg.muted">
-                        <p style={{ whiteSpace: "pre-line" }}>
-                            {Constant.Proyects.More.Description}
-                        </p>
-                    </Text>
-                    </Card.Description>
-                    <HStack mt="4">
-                    <Badge>Table Trail</Badge>
-                    <Badge>Chat XMPP</Badge>
-                    <Badge>Cosita Mia</Badge>
-                    </HStack>
-                </Card.Body>
-                <Card.Footer>
-                    <Modal posfix_name="More" />
-                </Card.Footer>
-                </Box>
-            </Card.Root>
+
+            {/* Contenedor para que ocupe toda la fila */}
+            <div className="full-row-card">
+                <Card.Root flexDirection="row" overflow="hidden" maxW="100%" height={300} borderColor={"fg.muted"}>
+                    <Image
+                        objectFit="cover"
+                        src={More}
+                        alt="Caffe Latte"
+                    />
+                    <Box>
+                        <Card.Body>
+                            <Card.Title mb="2">{Constant[language].Proyects.OtherProyects}</Card.Title>
+                            <Card.Description className='description' textAlign={"justify"}>
+                                <p textAlign={"justify"}>
+                                    {Constant[language].Proyects.More.Description}
+                                </p>
+                            </Card.Description>
+                            <HStack mt="4">
+                                {Object.entries(Constant[language].Proyects.More.Proyects).map(([key, value]) => {
+                                    return <Badge key={key}>{value.Title}</Badge>;
+                                })}
+                            </HStack>
+                        </Card.Body>
+                        <Card.Footer>
+                            <Modal posfix_name="More" />
+                        </Card.Footer>
+                    </Box>
+                </Card.Root>
+            </div>
         </div>
-    )
+    );
 }

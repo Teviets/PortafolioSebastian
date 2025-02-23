@@ -13,7 +13,7 @@
     scroll-snap-type: y mandatory;
     overflow: hidden; 
     box-sizing: border-box; 
-    overflow-y: auto; /* Habilita el scroll solo en este div */
+    overflow-y: auto; 
 }
 
 #aboutMe-container::-webkit-scrollbar {
@@ -194,3 +194,125 @@
     padding: 15px;
     box-sizing: border-box;
 }
+
+@media (max-width: 767px) {
+    #aboutMe-container {
+        max-width: 100%; /* El contenedor ocupa el 100% en pantallas muy pequeñas */
+        top: 10%; /* Reduce la distancia superior */
+        height: 60%; /* Ajusta la altura */
+    }
+
+    #Title-container h2 {
+        font-size: 1.5em; /* Aumenta la reducción del tamaño de fuente */
+    }
+
+    #Image-container {
+        width: 50%; /* La imagen ocupa más espacio en pantallas pequeñas */
+    }
+
+    #Text-container {
+        width: 100%; /* Ocupa el 100% del ancho */
+    }
+
+    #Skills-container {
+        flex-direction: column-reverse; /* Sigue el formato en columna para pantallas pequeñas */
+    }
+
+    #Title-skill-container  h3{
+        writing-mode: horizontal-tb; /* Cambia la orientación del texto */
+        text-orientation: sideways; /* Cambia la orientación del texto */
+    }
+
+    .description-list {
+        gap: 20px; /* Aumenta el espacio entre los elementos */
+    }
+    
+    .tooltip-text {
+        width: 120px; /* Tooltip más pequeño en pantallas muy pequeñas */
+        font-size: 10px; /* Texto más pequeño en pantallas muy pequeñas */
+    }
+}
+
+@media (max-width: 767px) {
+
+    #Image-container {
+        height: 35%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #aboutMe-container {
+        max-width: 90%; /* Ajusta el tamaño en pantallas más pequeñas */
+        left: 5%; /* Centra el contenedor */
+        top: 15%; /* Ajusta la distancia superior */
+        height: 70%; /* Aumenta la altura para pantallas más pequeñas */
+    }
+
+    #Title-container h2 {
+        font-size: 2em; /* Ajusta el tamaño de la fuente */
+    }
+    #description-container {
+        flex-direction: column; /* Cambia el formato a columna */
+        gap: 10px; /* Aumenta el espacio entre los elementos */
+    }
+
+    #Text-container {
+        width: 100%; /* Ajusta el ancho del contenedor de texto */
+    }
+    .tooltip-text {
+        width: 150px; /* Ajusta el tamaño del tooltip */
+        font-size: 12px; /* Reduce el tamaño del texto en el tooltip */
+    }
+    
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    #aboutMe-container {
+        max-width: 90%; /* Ajusta el tamaño en pantallas más pequeñas */
+        left: 5%; /* Centra el contenedor */
+        top: 15%; /* Ajusta la distancia superior */
+        height: 70%; /* Aumenta la altura para pantallas más pequeñas */
+    }
+
+    #Title-container h2 {
+        font-size: 2em; /* Ajusta el tamaño de la fuente */
+    }
+
+    #Image-container {
+        width: 70%; /* Hace que la imagen ocupe más espacio en pantallas pequeñas */
+    }
+
+    #Text-container {
+        width: 100%; /* Ajusta el ancho del contenedor de texto */
+    }
+    .tooltip-text {
+        width: 150px; /* Ajusta el tamaño del tooltip */
+        font-size: 12px; /* Reduce el tamaño del texto en el tooltip */
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) and (min-device-width: 1440px) {
+    #aboutMe-container {
+        left: 45%; /* Centra el contenedor */
+        top: 27%; /* Ajusta la distancia superior */
+        max-width: 50%; /* Ajusta el tamaño del contenedor */
+        height: 48%; /* Ajusta la altura del contenedor */
+    }
+
+    #Title-container h2 {
+        font-size: 3em; /* Ajusta el tamaño de la fuente */
+    }
+
+    #Image-container {
+        width: 50%; /* Hace que la imagen ocupe menos espacio en pantallas grandes */
+    }
+
+    #Text-container {
+        width: 60%; /* Ajusta el ancho del contenedor de texto */
+    }
+    .tooltip-text {
+        width: 200px; /* Ajusta el tamaño del tooltip */
+        font-size: 14px; /* Aumenta el tamaño del texto en el tooltip */
+    }
+  }

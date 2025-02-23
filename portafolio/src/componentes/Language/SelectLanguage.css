@@ -1,0 +1,36 @@
+#select-language {
+    z-index: 2000;
+    position: absolute; /* Asegura que el z-index funcione */
+    bottom: 1%;
+    right: 1%;
+    padding: 10px;
+}
+
+.option-lan{
+    background-color: black;
+}
+
+
+@media (max-width: 767px) {
+    #select-language {
+        top: 1%;
+        right: 1%;
+        padding: 10px;
+    }
+}
+
+/* Estilo para pantallas medianas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #select-language {
+        display: none;
+    }
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 1024px) {
+    #select-language {
+        bottom: 1%;
+        right: 1%;
+        padding: 10px;
+    }
+}

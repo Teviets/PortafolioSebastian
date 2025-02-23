@@ -1,0 +1,133 @@
+#contact-container{
+    z-index: 1010;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    left: 63%;
+    top: 35%;
+    width: 100%; 
+    max-width: 30%;
+    scroll-snap-type: y mandatory;
+    overflow: hidden; 
+    box-sizing: border-box; 
+    overflow-y: auto; /* Habilita el scroll solo en este div */
+}
+
+#contact-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del "track" (fondo de la barra) */
+#contact-container::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Color de fondo del track */
+    border-radius: 4px;
+}
+
+/* Estilo del "thumb" (deslizador) */
+#contact-container::-webkit-scrollbar-thumb {
+    background: #ff8800; /* Color del deslizador */
+    border-radius: 4px;
+}
+
+/* Cambia el color cuando se pasa el cursor */
+#contact-container::-webkit-scrollbar-thumb:hover {
+    background: #ff8800; /* Color cuando el usuario lo pasa */
+}
+
+#Title-container{
+    margin: 15px;
+}
+.contact-info{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.item-contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 1.2em;
+}
+
+.description-list-contact {
+    display: flex; 
+    flex-direction: row;
+    justify-content: left;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 767px) {
+    #contact-container{
+        left: 0;
+        top: 15%;
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+    }
+    .contact-info{
+        padding: 10px;
+    }
+    .item-contact{
+        font-size: 1em;
+    }
+    .description-list-contact {
+        gap: 10px;
+    }
+}
+
+/* Estilo para pantallas medianas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #contact-container{
+        left: 0;
+        top: 25%;
+        width: 100%;
+        max-width: 100%;
+        padding: 25px;
+    }
+    .contact-info{
+        padding: 10px;
+    }
+    .item-contact{
+        font-size: 1em;
+    }
+    .description-list-contact {
+        gap: 10px;
+    }
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 1024px) {
+    #contact-container{
+        left: 63%;
+        top: 27%;
+        width: 100%;
+        max-width: 30%;
+        padding: 25px;
+    }
+    .contact-info{
+        padding: 15px;
+    }
+    .item-contact{
+        font-size: 1.2em;
+    }
+    .description-list-contact {
+        gap: 25px;
+    }
+}

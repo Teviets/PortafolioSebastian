@@ -5,10 +5,15 @@ import { gsap } from 'gsap';
 
 import Home from '../Home/Home.jsx';
 import AboutMe from '../AboutMe/AboutMe.jsx';
+import Proyects from '../Proyects/Proyects.jsx';
+import Contact from '../Contact/Contact.jsx';
 
 import Background from '../../componentes/background/Background.jsx';
 import Menu from '../../componentes/menu/Menu.jsx';
-import Proyects from '../Proyects/Proyects.jsx';
+import SelectLanguage from '../../componentes/Language/SelectLanguage.jsx';
+
+import { LanguageProvider } from'../../componentes/Language/LanguageSelector.jsx'
+
 
 import './App.css';
 
@@ -64,22 +69,27 @@ function App() {
   }, [isMenuOpen]);
 
   return (
-    <div 
-      className="App"
-      onMouseMove={handleMouseMove}
-    >
-      <Background cursor={cursor} ref={backgroundRef} />
-      <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+    <LanguageProvider>
+      <div 
+        className="App"
+        onMouseMove={handleMouseMove}
+      >
+        <Background cursor={cursor} ref={backgroundRef} />
+        <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <SelectLanguage />
+        
 
-      <div ref={routesContainerRef} className="routes-container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutMe />} />
-          <Route path="/proyects" element={<Proyects />} />
-          
-        </Routes>
+        <div ref={routesContainerRef} className="routes-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/proyects" element={<Proyects />} />
+            <Route path="/contact" element={<Contact />} />
+            
+          </Routes>
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   );
 }
 

@@ -6,23 +6,27 @@ import Constant from '../../assets/Constant/Constant.jsx';
 
 import './AboutMe.css';
 
+import { useLanguage } from '../../componentes/Language/LanguageSelector.jsx';
+
 export default function AboutMe() {
+    const { language } = useLanguage();
   return (
     <div id='aboutMe-container'>
         <div className='snap-child' id='huge-container'>
             <div id='Title-container'>
-                <h2>{Constant.About.Title}</h2>
+                <h2>{Constant[language].About.Title}</h2>
             </div>
             <div id='description-container' >
                 <div id='Image-container'>
-                    <img src={sebasImg} alt='profile'/>
+                    <img src={sebasImg} alt='profile' id='image-about'/>
                 </div>
                 <div id='Text-container'>
                     <p>
-                    {Constant.About.firstText}
-                    
-                    <br/><br/>
-                    {Constant.About.secondText}
+                    {Constant[language].About.firstText}
+                    </p>
+                    <br/>
+                    <p id='second-text'>
+                    {Constant[language].About.secondText}
                     </p>
                 </div>
                 
@@ -31,7 +35,7 @@ export default function AboutMe() {
         <div id='divider-div'></div>
         <div id='Skills-container' className='snap-child'>
             <div id='Skill-container-list'>
-                <h4 className='known-title'>{Constant.About.languages}</h4>
+                <h4 className='known-title'>{Constant[language].About.languages}</h4>
                 <ul className='description-list'>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" width="40" viewBox="0 0 448 512">
@@ -104,7 +108,7 @@ export default function AboutMe() {
                         </svg>
                     </li>
                 </ul>
-                <h4 className='known-title'>{Constant.About.frameworks}</h4>
+                <h4 className='known-title'>{Constant[language].About.frameworks}</h4>
                 <ul className='description-list'>
                     <li>
                         <svg fill="#ffffff" width="48" height="48" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +138,7 @@ export default function AboutMe() {
                     </li>
                     
                 </ul>
-                <h4 className='known-title'>{Constant.About.database} </h4>
+                <h4 className='known-title'>{Constant[language].About.database} </h4>
                 <ul className="description-list" >
                     <li>
                         <svg width="48" height="48" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +162,7 @@ export default function AboutMe() {
                     </li>
                 </ul>
 
-                <h4 className='known-title'>{Constant.About.tools} </h4>
+                <h4 className='known-title'>{Constant[language].About.tools} </h4>
                 <ul className='description-list'>
                     <li>
                         <svg fill="#ffffff" width="48" height="48" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +214,7 @@ export default function AboutMe() {
                 </ul>
             </div>
             <div id='Title-skill-container'>
-                <h3>{Constant.About.skills} </h3>
+                <h3>{Constant[language].About.skills} </h3>
             </div>
         </div>
 
