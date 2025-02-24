@@ -77,7 +77,7 @@ This project is deployed using Firebase Hosting. To deploy updates:
 ## 📬 Contact
 If you have any questions or want to collaborate, feel free to reach out!
 
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- **Email:** your.email@example.com
+- **LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/sebastian-estrada-0b73a0274/)
+- **Email:** sestradat.37@gmail.com
 
 
