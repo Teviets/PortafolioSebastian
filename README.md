@@ -39,12 +39,12 @@ Follow these steps to run the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/Teviets/PortafolioSebastian.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd your-portfolio
+   cd portafolio
    ```
 
 3. Install dependencies:
