@@ -8,7 +8,7 @@ import App from './Pantallas/App/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter >
       <Provider>
         <App />
       </Provider>

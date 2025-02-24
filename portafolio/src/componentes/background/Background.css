@@ -1,5 +1,6 @@
 .Background{
     height: 100%;
+    left: -10%;
 }
 
 @media (max-width: 767px) {
@@ -19,7 +20,7 @@
   .Background {
     position: absolute;
     top: 0%;
-    left: -10%;
+    left: -15%;
   }
 }
 
@@ -27,5 +28,6 @@
   .Background {
     position: absolute;
     top: 0%;
+    left: -10%;
   }
 }
