@@ -39,12 +39,12 @@ Follow these steps to run the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/Teviets/PortafolioSebastian.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd your-portfolio
+   cd portafolio
    ```
 
 3. Install dependencies:
@@ -77,7 +77,7 @@ This project is deployed using Firebase Hosting. To deploy updates:
 ## 📬 Contact
 If you have any questions or want to collaborate, feel free to reach out!
 
-- **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- **Email:** your.email@example.com
+- **LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/sebastian-estrada-0b73a0274/)
+- **Email:** sestradat.37@gmail.com
 
 
