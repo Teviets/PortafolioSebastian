@@ -146,8 +146,29 @@
     transform: scale(1.5) !important;  /* Aumenta el tamaño al 120% */
 }
 
-.option-menu Link{
-    margin: 15px !important;
+.option-menu Link {
+  margin: 15px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.option-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%; /* Asegúrate de que el ancho esté limitado */
+  font-size: clamp(1rem, 2.5vw, 2.5em); /* Tamaño dinámico del texto */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 3px solid #ffffff;
+  margin-top: 35px;
+  padding: 20px;
+  white-space: nowrap; /* Forzar una sola línea */
+  overflow: hidden; /* Ocultar texto desbordado */
+  text-overflow: ellipsis; /* Añadir puntos suspensivos si el texto es demasiado largo */
 }
 
 /* Estilos para pantallas pequeñas (móviles) */
